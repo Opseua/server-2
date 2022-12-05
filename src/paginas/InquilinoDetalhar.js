@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
+import ImagemCasa from '../img/logo.jpg';
 
 
-const EmpDetail = () => {
+const InquilinoDetalhar = () => {
     const { empid } = useParams();
 
     const [empdata, empdatachange] = useState({});
 
     useEffect(() => {
-        fetch("http://localhost:8000/employee/" + empid).then((res) => {
+        fetch("https://server-2.onrender.com/inquilino/detalhar/" + empid).then((res) => {
             return res.json();
         }).then((resp) => {
             empdatachange(resp);
@@ -25,17 +26,26 @@ const EmpDetail = () => {
                 
             <div className="card row" style={{ "textAlign": "left" }}>
                 <div className="card-title">
-                    <h2>Employee Create</h2>
+                <h2>Detalhe inquilino</h2>
                 </div>
                 <div className="card-body"></div>
 
                 {empdata &&
                     <div>
-                        <h2>The Employee name is : <b>{empdata.name}</b>  ({empdata.id})</h2>
-                        <h3>Contact Details</h3>
-                        <h5>Email is : {empdata.email}</h5>
-                        <h5>Phone is : {empdata.phone}</h5>
-                        <Link className="btn btn-danger" to="/">Back to Listing</Link>
+                        <h5>ID: {empdata.id}</h5>
+                        <h2>Nome: <b>{empdata.nome}</b></h2>
+                        <br></br>
+
+                        <h5>Salário: {empdata.salario}</h5>
+                        <h5>CPF: {empdata.cpf}</h5>
+                        <h5>Idade: {empdata.idade}</h5>
+                        <h5>Profissão: {empdata.profissao}</h5>
+                        <h5>Contato: {empdata.contato}</h5>
+                        <h5>Tempo como inquino: {empdata.tempo_como_inquilino}</h5>
+                        <br></br>
+
+                        {/* Botão VOLTAR */}
+                        <Link to="/inquilinos/listar" className="btn btn-danger">Voltar</Link>
                     </div>
                 }
             </div>
@@ -46,4 +56,4 @@ const EmpDetail = () => {
     );
 }
 
-export default EmpDetail;
+export default InquilinoDetalhar;
