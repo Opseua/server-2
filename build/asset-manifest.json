@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/corretores/listar/static/css/main.6bebfe2b.css",
+    "main.js": "/corretores/listar/static/js/main.050005c7.js",
+    "static/media/logo.jpg": "/corretores/listar/static/media/logo.59ccc081267f3146d568.jpg",
+    "index.html": "/corretores/listar/index.html",
+    "main.6bebfe2b.css.map": "/corretores/listar/static/css/main.6bebfe2b.css.map",
+    "main.050005c7.js.map": "/corretores/listar/static/js/main.050005c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6bebfe2b.css",
+    "static/js/main.050005c7.js"
+  ]
+}
